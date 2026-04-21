@@ -1,0 +1,213 @@
+:root{
+  --black:#1a1a1c;
+  --black-soft:#242427;
+  --gold:#bf9857;
+  --gold-light:#d8c099;
+  --gold-dim:rgba(191,152,87,0.25);
+  --warm-white:#f4f2eb;
+  --cream:#fefbf2;
+  --brown:#3b2a18;
+  --brown-soft:#6b5740;
+  --shadow-soft:0 6px 20px rgba(0,0,0,0.08);
+  --shadow-heavy:0 12px 40px rgba(0,0,0,0.4);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Assistant',sans-serif;
+  font-size:17px;
+  line-height:1.8;
+  color:var(--brown);
+  background:var(--cream);
+  direction:rtl;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+h1,h2,h3,h4{font-family:'Frank Ruhl Libre',serif;font-weight:700;line-height:1.35}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+/* ========== LAYOUT ========== */
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+.wrap-narrow{max-width:560px;margin:0 auto;padding:0 24px}
+section{padding:64px 0}
+
+/* ========== REVEAL ANIMATIONS ========== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.8s ease, transform 0.8s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* ========== HERO ========== */
+.hero{background:var(--black);color:var(--warm-white);padding:48px 0 56px;text-align:center;position:relative;overflow:hidden}
+.hero::before{
+  content:'';position:absolute;inset:-20% -10% auto auto;width:60%;height:80%;
+  background:radial-gradient(ellipse at center, rgba(191,152,87,0.08), transparent 60%);
+  pointer-events:none;
+}
+.hero .wrap{position:relative}
+.hero-logo{margin-bottom:18px;display:flex;justify-content:center}
+.hero-logo img{width:72px;height:72px;object-fit:contain;opacity:0.9}
+.hero .eyebrow{color:var(--gold);letter-spacing:3px;font-size:12px;text-transform:uppercase;margin-bottom:18px;font-family:'Frank Ruhl Libre',serif}
+.hero h1{font-size:clamp(28px,5vw,42px);color:var(--warm-white);margin-bottom:14px;font-weight:700}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero .lede{color:var(--gold-light);font-size:17px;line-height:1.75;max-width:540px;margin:0 auto 28px}
+.hero .lede strong{color:var(--gold);font-weight:600}
+
+.video-frame{max-width:620px;margin:28px auto;border:1px solid var(--gold-dim);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-heavy)}
+.video-frame iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
+
+.hero-trust{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--gold-light);opacity:0.85;margin-top:28px;letter-spacing:0.5px}
+.hero-trust span{position:relative;padding:0 4px}
+.hero-trust span::before{content:'·';color:var(--gold);margin-left:14px}
+.hero-trust span:first-child::before{content:''}
+
+/* ========== CTA ========== */
+.cta{
+  display:inline-block;background:var(--gold);color:var(--black);
+  font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:17px;
+  padding:14px 36px;border-radius:4px;text-decoration:none;border:none;cursor:pointer;
+  letter-spacing:0.5px;transition:background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow:0 4px 14px rgba(191,152,87,0.25);
+}
+.cta:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(191,152,87,0.35)}
+.cta:active{transform:translateY(0)}
+.cta-sub{display:block;margin-top:10px;font-size:13px;color:var(--gold-light);opacity:0.7;letter-spacing:1px;text-transform:uppercase}
+.cta-sub-dark{color:var(--gold-light);opacity:0.7}
+
+/* ========== SECTION HEADERS ========== */
+.eyebrow-s{font-family:'Frank Ruhl Libre',serif;color:var(--gold);letter-spacing:3px;font-size:12px;text-transform:uppercase;margin-bottom:12px;text-align:center}
+h2.section-title{font-size:clamp(24px,3.5vw,30px);color:var(--brown);text-align:center;margin-bottom:14px}
+.section-sub{text-align:center;color:var(--brown-soft);font-size:15px;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7}
+
+/* ========== INCLUDES ========== */
+.includes{background:var(--black);color:var(--warm-white);padding:72px 0}
+.includes .eyebrow-s{color:var(--gold)}
+.includes h2{color:var(--warm-white);text-align:center;margin-bottom:10px}
+.includes .sub{text-align:center;color:var(--gold-light);margin-bottom:36px;font-size:15px}
+.inc-list{max-width:540px;margin:0 auto;border:1px solid var(--gold-dim);border-radius:8px;overflow:hidden;background:rgba(255,255,255,0.015)}
+.inc-row{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 22px;border-bottom:1px solid rgba(191,152,87,0.15);align-items:center;text-align:right;transition:background 0.2s}
+.inc-row:last-child{border-bottom:none}
+.inc-row:hover{background:rgba(191,152,87,0.04)}
+.inc-num{font-family:'Frank Ruhl Libre',serif;color:var(--gold);font-size:20px;font-weight:700}
+.inc-text{font-size:15px;color:var(--warm-white);line-height:1.5}
+.cta-center{text-align:center;margin-top:36px}
+
+/* ========== PAIN SCENE ========== */
+.pain{background:var(--warm-white);padding:72px 0}
+.pain p{font-size:17px;line-height:1.9;color:var(--brown);margin-bottom:16px}
+.pain .accent{border-right:2px solid var(--gold);padding-right:18px;margin:20px 0;color:var(--brown-soft);font-style:italic}
+.pain-img{max-width:360px;margin:32px auto;border-radius:10px;box-shadow:var(--shadow-soft)}
+
+/* ========== COSTS GRID ========== */
+.costs{background:var(--cream);padding:72px 0}
+.costs h2{margin-bottom:8px}
+.costs-lead{text-align:center;color:var(--brown-soft);margin-bottom:40px;font-size:15px}
+.cost-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:640px;margin:0 auto}
+.cost-card{background:#fff;border:1px solid rgba(191,152,87,0.2);border-radius:8px;padding:24px;text-align:right;transition:transform 0.25s, box-shadow 0.25s}
+.cost-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.cost-card h3{font-size:17px;color:var(--gold);margin-bottom:8px;font-family:'Frank Ruhl Libre',serif}
+.cost-card p{font-size:14px;color:var(--brown);line-height:1.7}
+@media(max-width:600px){.cost-grid{grid-template-columns:1fr}}
+
+/* ========== TIME ========== */
+.time-block{background:var(--black);color:var(--warm-white);padding:56px 0;text-align:center}
+.time-block .eyebrow-s{color:var(--gold)}
+.time-block h2{color:var(--warm-white);margin-bottom:14px}
+.time-block p{color:var(--gold-light);font-size:16px;max-width:520px;margin:0 auto 10px;line-height:1.8}
+
+/* ========== ABOUT MAYA ========== */
+.about{background:var(--warm-white);padding:72px 0}
+.about-photo{width:160px;height:160px;border-radius:50%;object-fit:cover;margin:0 auto 28px;border:2px solid var(--gold);display:block;box-shadow:var(--shadow-soft)}
+.about h2{text-align:center;margin-bottom:6px}
+.about .role{text-align:center;color:var(--gold);font-family:'Frank Ruhl Libre',serif;font-size:14px;letter-spacing:2px;margin-bottom:32px}
+.about p{margin-bottom:16px;text-align:right;font-size:16px;line-height:1.85}
+.about strong{color:var(--brown);font-weight:600}
+
+/* ========== STAGES ========== */
+.stages{background:var(--cream);padding:72px 0}
+.stage{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(191,152,87,0.2);align-items:start}
+.stage:last-child{border-bottom:none}
+.stage-num{font-family:'Frank Ruhl Libre',serif;font-size:32px;color:var(--gold);font-weight:700;line-height:1;padding-top:4px}
+.stage h3{font-size:18px;color:var(--brown);margin-bottom:6px}
+.stage p{font-size:15px;color:var(--brown-soft);line-height:1.75}
+
+/* ========== EXTRAS ========== */
+.extras{background:var(--warm-white);padding:72px 0}
+.extras-lead{text-align:center;max-width:540px;margin:0 auto 32px;color:var(--brown-soft);font-size:15px;line-height:1.8}
+.extra{max-width:540px;margin:0 auto 18px;background:#fff;border:1px solid rgba(191,152,87,0.2);border-radius:8px;padding:22px 26px;text-align:right;transition:transform 0.25s, box-shadow 0.25s}
+.extra:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.extra h3{font-size:16px;color:var(--gold);margin-bottom:6px;font-family:'Frank Ruhl Libre',serif}
+.extra p{font-size:14px;color:var(--brown);line-height:1.7}
+
+/* ========== OFFER ========== */
+.offer{background:var(--black);color:var(--warm-white);padding:80px 0;text-align:center}
+.offer .eyebrow-s{color:var(--gold)}
+.offer h2{color:var(--warm-white);margin-bottom:24px}
+.offer-intro{text-align:right;color:var(--gold-light);font-size:15px;line-height:1.85;margin-bottom:24px}
+.offer-note{color:var(--gold-light);font-size:14px;max-width:480px;margin:0 auto 28px;line-height:1.75;font-style:italic}
+
+.cost-break{max-width:480px;margin:0 auto 32px;text-align:right;background:rgba(255,255,255,0.03);border:1px solid var(--gold-dim);border-radius:6px;padding:22px 26px}
+.cost-break-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(191,152,87,0.15);font-size:14px;color:var(--gold-light)}
+.cost-break-row:last-child{border-bottom:none;border-top:1px solid var(--gold);margin-top:8px;padding-top:14px;color:var(--gold);font-weight:600;font-size:15px}
+
+.price-block{margin:24px 0}
+.price-before{color:var(--gold-light);opacity:0.6;text-decoration:line-through;font-size:20px;margin-bottom:6px}
+.price-now{font-family:'Frank Ruhl Libre',serif;font-size:clamp(42px,7vw,52px);color:var(--gold);font-weight:700;margin-bottom:4px;line-height:1.1}
+.price-sub{font-size:14px;color:var(--gold-light);opacity:0.85;margin-bottom:8px}
+.launch-note{font-size:13px;color:var(--gold-light);opacity:0.7;max-width:440px;margin:16px auto 30px;line-height:1.7;font-style:italic}
+
+/* ========== FORM (Rav Messer) ========== */
+.form-wrap{max-width:480px;margin:28px auto 0;background:rgba(255,255,255,0.04);border:1px solid var(--gold-dim);padding:24px;border-radius:8px}
+.form-lede{font-size:14px;color:var(--gold-light);margin-bottom:16px;text-align:right}
+.rm-form{background:var(--cream);border-radius:6px;padding:14px;min-height:200px}
+.rm-form *{direction:rtl}
+
+/* ========== FIT ========== */
+.fit{background:var(--cream);padding:72px 0}
+.fit-block{max-width:540px;margin:0 auto}
+.fit-block h3{font-size:17px;color:var(--brown);margin:28px 0 14px;font-family:'Frank Ruhl Libre',serif}
+.fit-item{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:8px 0;font-size:15px;line-height:1.7;color:var(--brown)}
+.fit-mark{color:var(--gold);font-weight:700;font-family:'Frank Ruhl Libre',serif}
+.not-fit .fit-mark{color:#a67458;opacity:0.7}
+.not-fit-note{margin-top:18px;padding:14px 18px;background:#fff;border-right:2px solid var(--gold);font-size:14px;color:var(--brown-soft);line-height:1.7;font-style:italic}
+
+/* ========== FAQ ========== */
+.faq{background:var(--warm-white);padding:72px 0}
+.faq-item{border-bottom:1px solid rgba(191,152,87,0.2);padding:16px 0;max-width:560px;margin:0 auto}
+.faq-q{font-family:'Frank Ruhl Libre',serif;font-weight:500;font-size:16px;color:var(--brown);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;user-select:none}
+.faq-q::after{content:'+';color:var(--gold);font-size:22px;font-weight:300;flex-shrink:0;transition:transform 0.3s}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease;font-size:14px;color:var(--brown-soft);line-height:1.75}
+.faq-item.open .faq-a{max-height:500px;padding-top:12px}
+
+/* ========== DISCLAIMER ========== */
+.disclaimer{background:var(--black);color:var(--gold-light);padding:40px 24px;text-align:center;font-size:12px;opacity:0.75;line-height:1.8}
+.disclaimer p{margin-top:8px}
+.disclaimer strong{color:var(--gold);font-weight:500}
+
+footer{background:var(--black);color:var(--gold-light);padding:24px;text-align:center;font-size:12px;opacity:0.6}
+
+/* ========== STICKY MOBILE CTA ========== */
+.sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(26,26,28,0.96);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:12px 16px;
+  border-top:1px solid var(--gold-dim);
+  text-align:center;
+  transform:translateY(110%);
+  transition:transform 0.3s ease;
+  z-index:100;
+}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta .cta{width:100%;max-width:420px;padding:12px 24px;font-size:16px}
+body{padding-bottom:0}
+@media (max-width:720px){
+  body.has-sticky{padding-bottom:80px}
+}
+@media (min-width:721px){
+  .sticky-cta{display:none}
+}
