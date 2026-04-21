@@ -196,12 +196,14 @@ h2.section-title{font-size:clamp(24px,3.5vw,30px);color:var(--brown);text-align:
 .costs{background:var(--cream);padding:72px 0}
 .costs h2{margin-bottom:8px}
 .costs-lead{text-align:center;color:var(--brown-soft);margin-bottom:40px;font-size:15px}
-.cost-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:640px;margin:0 auto}
-.cost-card{background:#fff;border:1px solid rgba(191,152,87,0.2);border-radius:8px;padding:24px;text-align:right;transition:transform 0.25s, box-shadow 0.25s}
-.cost-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
-.cost-card h3{font-size:17px;color:var(--gold);margin-bottom:8px;font-family:'Frank Ruhl Libre',serif}
+.cost-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:720px;margin:0 auto}
+.cost-card{background:#fff;border:1px solid rgba(191,152,87,0.2);border-radius:10px;overflow:hidden;text-align:right;transition:transform 0.25s, box-shadow 0.25s;display:flex;flex-direction:column}
+.cost-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+.cost-img{width:100%;height:200px;object-fit:cover;display:block}
+.cost-card-body{padding:22px 24px}
+.cost-card h3{font-size:17px;color:var(--gold);margin-bottom:10px;font-family:'Frank Ruhl Libre',serif}
 .cost-card p{font-size:14px;color:var(--brown);line-height:1.7}
-@media(max-width:600px){.cost-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.cost-grid{grid-template-columns:1fr}.cost-img{height:180px}}
 
 /* ========== TIME ========== */
 .time-block{background:var(--black);color:var(--warm-white);padding:56px 0;text-align:center}
