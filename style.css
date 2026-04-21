@@ -283,6 +283,27 @@ h2.section-title{font-size:clamp(28px,4.5vw,38px);color:var(--brown);text-align:
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease;font-size:14px;color:var(--brown-soft);line-height:1.75}
 .faq-item.open .faq-a{max-height:500px;padding-top:12px}
 
+/* ========== CLOSING LETTER ========== */
+.closing{background:var(--warm-white);padding:80px 0}
+.closing-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:960px;margin:0 auto;align-items:center;padding:0 24px}
+.closing-image{display:block}
+.closing-image img{width:100%;height:auto;border-radius:12px;box-shadow:0 12px 40px rgba(59,42,24,0.12)}
+.closing-letter{text-align:right;font-size:16px;line-height:1.85;color:var(--brown)}
+.closing-salutation{font-family:'Frank Ruhl Libre',serif;font-size:22px;font-weight:700;color:var(--brown);margin-bottom:20px}
+.closing-letter p{margin-bottom:18px}
+.closing-sig{margin-top:28px;font-style:italic;color:var(--brown-soft);line-height:1.6}
+.closing-sig strong{font-family:'Frank Ruhl Libre',serif;font-style:normal;color:var(--brown);font-weight:700;font-size:17px;letter-spacing:0.3px}
+.closing-cta{margin-top:32px;text-align:center}
+.closing-cta .cta-sub{color:var(--brown-soft)}
+
+@media(max-width:720px){
+  .closing{padding:56px 0}
+  .closing-grid{grid-template-columns:1fr;gap:32px}
+  .closing-image{max-width:360px;margin:0 auto}
+  .closing-letter{font-size:15px}
+  .closing-salutation{font-size:20px}
+}
+
 /* ========== DISCLAIMER ========== */
 .disclaimer{background:var(--black);color:var(--gold-light);padding:40px 24px;text-align:center;font-size:12px;opacity:0.75;line-height:1.8}
 .disclaimer p{margin-top:8px}
