@@ -41,25 +41,40 @@
 </head>
 <body>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="wrap">
+<!-- ===== HERO (STICKY PARALLAX) ===== -->
+<div class="hero-wrapper">
+  <div class="hero-image-sticky">
+    <picture>
+      <source srcset="assets/hero-woman.webp" type="image/webp" />
+      <img src="assets/hero-woman.jpg" alt="" class="hero-bg-img" loading="eager" fetchpriority="high" />
+    </picture>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-text-area">
     <div class="hero-logo"><img src="assets/logo.png" alt="ד״ר מאיה שפיגל" /></div>
-    <div class="eyebrow">ד״ר מאיה שפיגל · פסיכולוגית קלינית</div>
-    <h1><em>מלידה לגדילה</em></h1>
-    <p class="lede">השיטה הקלינית מבוססת המחקר של ד״ר מאיה שפיגל. מערכת שמשלבת <strong>שני פרוטוקולים מדעיים, PE ו-EMDR</strong>, עם ליווי AI אישי 24/7, לעיבוד הלידה המורכבת וחיזוק הקשר שלך עם התינוק.</p>
+    <div class="hero-preheadline">תוכנית לאמהות אחרי לידה מורכבת</div>
+    <h1 class="hero-headline"><em>מלידה לגדילה</em></h1>
+    <p class="hero-subheadline">השיטה הקלינית מבוססת המחקר של ד״ר מאיה שפיגל. מערכת שמשלבת <strong>שני פרוטוקולים מדעיים, PE ו-EMDR</strong>, עם ליווי AI אישי 24/7, לעיבוד הלידה המורכבת וחיזוק הקשר שלך עם התינוק.</p>
 
-    <div class="video-frame reveal">
-      <iframe src="https://www.veed.io/embed/f660cf57-fd6d-447f-be5f-9c1680f1497f" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
-    <a href="#offer" class="cta">אני רוצה לחוות את הלידה כצמיחה</a>
+    <a href="#offer" class="cta hero-cta">אני רוצה לחוות את הלידה כצמיחה</a>
     <span class="cta-sub">מחיר השקה מיוחד לזמן מוגבל</span>
 
     <div class="hero-trust">
       <span>20 שנה בקליניקה</span>
       <span>מוסמכת EMDR + PE</span>
       <span>ללא יציאה מהבית</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== VIDEO ===== -->
+<section class="hero-video-section">
+  <div class="wrap">
+    <div class="eyebrow-s">הסבר קצר</div>
+    <h2 class="section-title">רגע של היכרות עם התוכנית</h2>
+    <div class="video-frame reveal">
+      <iframe src="https://www.veed.io/embed/f660cf57-fd6d-447f-be5f-9c1680f1497f" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -376,7 +391,7 @@
 
   // Sticky CTA only after scroll
   const sticky = document.querySelector('.sticky-cta');
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('.hero-wrapper');
   const toggleSticky = () => {
     const heroBottom = hero.getBoundingClientRect().bottom;
     sticky.classList.toggle('show', heroBottom < 0);
